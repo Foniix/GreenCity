@@ -37,7 +37,7 @@ public class TagsController {
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<List<TagDto>> findByTypeAndLanguageCode(@ApiIgnore @ValidLanguage Locale locale,
         @RequestParam TagType type) {
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity.status(HttpStatus.CREATED)
             .body(tagsService.findByTypeAndLanguageCode(type, locale.getLanguage()));
     }
 }
